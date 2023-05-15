@@ -1,0 +1,10 @@
+import express,{Express} from 'express';
+import {Server} from 'http';
+import {inject,injectable} from 'inversify';
+import { ExeptionFilter } from './errors/exeption.filter';
+import { ILogger } from './logger/logger.interface';
+import { TYPES } from './types';
+import { json } from 'body-parser';
+import 'reflect-metadata';
+import { IConfigService } from './config/config.service.interface';
+import { IExeptionFilter } from './errors/exeption.filter.interface';
