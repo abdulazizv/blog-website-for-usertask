@@ -19,7 +19,7 @@ export class App {
 
     constructor(
 		@inject(TYPES.ILogger) private logger: ILogger,
-		@inject(TYPES.UserController) private userController: UserController,
+		// @inject(TYPES.UserController) private userController: UserController,
 		@inject(TYPES.ExeptionFilter) private exeptionFilter: IExeptionFilter,
 		@inject(TYPES.ConfigService) private configService: IConfigService,
 		@inject(TYPES.PrismaService) private prismaService: PrismaService,
@@ -35,7 +35,7 @@ export class App {
 	}
 
 	useRoutes(): void {
-		this.app.use('/users', this.userController.router);
+		// this.app.use('/users', this.userController.router);
 	}
 
 	useExeptionFilters(): void {

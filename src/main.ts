@@ -1,1 +1,10 @@
 import { Container, ContainerModule, interfaces } from 'inversify';
+import { App } from './app';
+import { ConfigService } from './config/config.service';
+import { IConfigService } from './config/config.service.interface';
+import { PrismaService } from './database/prisma.service';
+import { ExeptionFilter } from './errors/exeption.filter';
+import { IExeptionFilter } from './errors/exeption.filter.interface';
+import { ILogger } from './logger/logger.interface';
+import { LoggerService } from './logger/logger.service';
+import { TYPES } from './types';
