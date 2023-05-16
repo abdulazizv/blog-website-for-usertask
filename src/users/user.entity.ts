@@ -32,4 +32,4 @@ export class User {
 	public async comparePassword(pass: string): Promise<boolean> {
 		return compare(pass, this._password);
 	}
-}
+}	
