@@ -17,7 +17,30 @@ export class BlogRepository implements IBlogRepository {
     
     
         await fsPromises.writeFile(`uploads/${filename}`, media.buffer);
-    
+        
         return `uploads/${filename}`;
       }
+
+    async createBlog(message:string,authorId:number,mediaPath:string){
+        const resp = await this.prismaService.client.blogModel.create({
+          data:{
+            message:message,
+            authorId:authorId,
+            image:mediaPath
+          }
+        })
+      
+        return resp;
+    }
+
+    async createBlogWithoutImage(message:string,authorId:number) {
+      const resp = await this.prismaService.client.blogModel.create({
+        data:{
+          message:message,
+          authorId:authorId,
+          image:""
+        }
+      })
+      return resp;
+    }
 }

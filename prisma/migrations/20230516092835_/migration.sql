@@ -14,6 +14,7 @@ CREATE TABLE "BlogModel" (
     "id" SERIAL NOT NULL,
     "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "message" TEXT NOT NULL,
+    "image" TEXT NOT NULL,
     "authorId" INTEGER NOT NULL,
 
     CONSTRAINT "BlogModel_pkey" PRIMARY KEY ("id")

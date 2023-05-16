@@ -89,6 +89,7 @@ export class UserController extends BaseController implements IUserController {
 
   async getById(req: Request<{ id: string }>, res: Response, next: NextFunction): Promise<void>{
     const { id } = req.params;
+   
 	const user = await this.userService.getUserById(Number(id));
 	if (!user) {
 		return next(new HTTPError(404, 'User not found'));
