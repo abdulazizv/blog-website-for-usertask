@@ -27,4 +27,12 @@ export class UsersRepository implements IUsersRepository {
 			},
 		});
 	}
+
+	async findOne(id: number): Promise<UserModel | null> {
+		return this.prismaService.client.userModel.findFirst({
+			where:{
+				id:id
+			}
+		});
+	}
 }
