@@ -21,7 +21,7 @@ export class LoggerService implements ILogger {
 	}
 
 	error(...args: unknown[]): void {
-        
+		
 		this.logger.error(...args);
 	}
 
